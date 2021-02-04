@@ -9,6 +9,6 @@ $factory->define(Employee::class, function (Faker $faker) {
     return [
         'name' => $faker -> word,
         'lastname' => $faker -> word,
-        'date_of_birth' => $faker -> date( $format = 'Y-m-d', $max = 'now'),
+        'date_of_birth' => $faker -> date,
     ];
 });
