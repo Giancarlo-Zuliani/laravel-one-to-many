@@ -17,4 +17,20 @@ class MainController extends Controller
         return view('pages.show', compact('emp'));
         
     }
+    public function createTask(){
+        $empl = Employee::all();
+        return view('pages.create-task' , compact('empl'));
+    }
+
+    public function store(Request $request){
+
+        $task = Task::make($request -> all());
+        $emp = Employee::findOrFail($request -> get('employee_id'));
+        $task -> employee() -> associate($emp);
+        $task -> save();
+
+        return redirect() -> route('home');
+    }
+
+
 }
