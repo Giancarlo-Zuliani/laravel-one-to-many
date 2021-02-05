@@ -48,4 +48,9 @@ class MainController extends Controller
         return redirect() -> route('home');
 
     }
+
+    public function destroyTask($id){
+       Task::destroy($id);
+       return redirect() -> route('home');
+    }
 }

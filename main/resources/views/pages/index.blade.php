@@ -10,7 +10,8 @@
     
     @foreach($e -> tasks as $t)
     
-        <a href="{{route('edit-task' , $t -> id)}}">edit</a>
+    <a href="{{route('edit-task' , $t -> id)}}">edit</a>
+    <a href="{{route('delete-task' , $t -> id)}}">delete</a>
             <h3>{{$t -> title}}</h3>
 
         @endforeach

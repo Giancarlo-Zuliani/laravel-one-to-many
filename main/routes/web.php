@@ -19,3 +19,6 @@ Route::get('/edit-task/{id}' , 'Maincontroller@editTask')
 
 Route::post('/update/{id}' , 'MainController@update')
     -> name('update-task');
+
+Route::get('/delete/{id}' , 'MainController@destroyTask')
+    -> name('delete-task');
