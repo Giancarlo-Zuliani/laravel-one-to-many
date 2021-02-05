@@ -32,5 +32,20 @@ class MainController extends Controller
         return redirect() -> route('home');
     }
 
+    public function editTask($id){
+        $empl = Employee::all();
+        $task = Task::findOrFail($id);
+        $thisemp = Employee::findOrFail($task -> employee_id);
+        return view('pages.edit-task' , compact('task' , 'empl' , 'thisemp'));
+    }
 
+    public function update(Request $request ,$id){
+        $task = Task::findOrFail($id);
+        $emp = EMployee::findOrFail($request -> get('employee_id'));
+        $task -> employee() -> associate($emp);
+        
+        $task -> update($request -> all());
+        return redirect() -> route('home');
+
+    }
 }
