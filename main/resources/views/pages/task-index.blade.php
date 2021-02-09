@@ -3,6 +3,7 @@
 @section('content')
     @foreach($tsk as $t)
 
-    <h5>{{$t-> title}}</h5>
+    <a href="{{route('task-show' , $t -> id)}}">{{$t-> title}}</a>
+    <br>
     @endforeach
     @endsection

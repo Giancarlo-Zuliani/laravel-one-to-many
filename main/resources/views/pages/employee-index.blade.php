@@ -3,6 +3,7 @@
 @section('content')
 
     @foreach($emp as $e)
-    <h5>{{$e -> name}}</h5>
+    <a href="{{route('employee-show' , $e-> id)}}">{{$e -> name}}</a>
+    <br>
     @endforeach
 @endsection
