@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Typology::class, function (Faker $faker) {
     return [
         'name' => $faker -> word,
-        'description' => $faker -> text($maxNbChars =50),
+        'description' => $faker -> sentence(2),
     ];
 });

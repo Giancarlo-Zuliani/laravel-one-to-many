@@ -36,7 +36,7 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
-        Schema::table('tasks' , function(Blueprint $table){
+        Schema::table('task_typologies' , function(Blueprint $table){
             $table -> dropForeign('tt-task');
             $table -> dropForeign('tt-typology');
         });
