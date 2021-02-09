@@ -1,20 +1,26 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    <a href="{{route('create-task')}}">create</a>
 
-   @foreach($emp as $e)
-   <a href="{{route('show' , $e -> id)}}">
-        <h1>{{$e -> name}}</h1>
-    </a>
-    
-    @foreach($e -> tasks as $t)
-    
-    <a href="{{route('edit-task' , $t -> id)}}">edit</a>
-    <a href="{{route('delete-task' , $t -> id)}}">delete</a>
-            <h3>{{$t -> title}}</h3>
+    <main>
 
-        @endforeach
-        
-    @endforeach
+        <h1>ELENCO DIPENDENTI:</h1>
+        <a href="{{ route('employee-create') }}">CREA EMPLOYEE</a>
+        <ul>
+
+            @foreach ($emp as $employee)
+                <li>
+                    <a href="{{ route('employee-show', $employee -> id) }}">
+                        {{ $employee -> name }}
+                    </a>
+
+                    <a href="{{ route('employee-edit', $employee -> id) }}">EDIT</a>
+
+                </li>
+            @endforeach
+
+        </ul>
+
+    </main>
+    
 @endsection
